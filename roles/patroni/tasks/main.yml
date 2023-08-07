@@ -800,14 +800,14 @@
         state: restarted
         enabled: true
 
-    - name: "Wait for port {{ patroni_restapi_port }} to become open on the host"
-      ansible.builtin.wait_for:
-        port: "{{ patroni_restapi_port }}"
-        host: "{{ hostvars[inventory_hostname]['inventory_hostname'] }}"
-        state: started
-        timeout: 120
-        delay: 10
-      ignore_errors: false
+    # - name: "Wait for port {{ patroni_restapi_port }} to become open on the host"
+    #   ansible.builtin.wait_for:
+    #     port: "{{ patroni_restapi_port }}"
+    #     host: "{{ hostvars[inventory_hostname]['inventory_hostname'] }}"
+    #     state: started
+    #     timeout: 120
+    #     delay: 10
+    #   ignore_errors: false
 
       # for WAL-G (custom bootstrap)
     - name: Wait for PostgreSQL Recovery to complete (WAL apply)
@@ -967,14 +967,14 @@
         state: restarted
         enabled: true
 
-    - name: "Wait for port {{ patroni_restapi_port }} to become open on the host"
-      ansible.builtin.wait_for:
-        port: "{{ patroni_restapi_port }}"
-        host: "{{ hostvars[inventory_hostname]['inventory_hostname'] }}"
-        state: started
-        timeout: 120
-        delay: 10
-      ignore_errors: false
+    # - name: "Wait for port {{ patroni_restapi_port }} to become open on the host"
+    #   ansible.builtin.wait_for:
+    #     port: "{{ patroni_restapi_port }}"
+    #     host: "{{ hostvars[inventory_hostname]['inventory_hostname'] }}"
+    #     state: started
+    #     timeout: 120
+    #     delay: 10
+    #   ignore_errors: false
 
     - name: Check that the patroni is healthy on the replica server
       ansible.builtin.uri:

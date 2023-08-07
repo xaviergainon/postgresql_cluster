@@ -73,7 +73,7 @@
       when: firewall_enabled_at_boot|bool
       tags: firewall
 
-    - role: hostname
+    #- role: hostname
     - role: resolv_conf
     - role: sysctl
 

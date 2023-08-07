@@ -15,7 +15,7 @@
     state: started
     timeout: 120
     delay: 5
-  ignore_errors: false
+  ignore_errors: true
   listen: "restart pgbouncer"
 
 - name: Reload pgbouncer service

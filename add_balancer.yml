@@ -134,7 +134,7 @@
       tags: always
 
   roles:
-    - role: hostname
+#   #- role: hostname
     - role: resolv_conf
 
     - role: haproxy

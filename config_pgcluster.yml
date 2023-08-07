@@ -22,7 +22,7 @@
         timescale_minimal_pg_version: 12 # if enable_timescale is defined
       tags: always
 
-    - role: hostname
+    #- role: hostname
     - role: resolv_conf
     - role: etc_hosts
     - role: timezone

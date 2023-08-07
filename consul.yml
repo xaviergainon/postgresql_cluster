@@ -101,7 +101,7 @@
       when: firewall_enabled_at_boot|bool
       tags: firewall
 
-    - role: hostname
+    #- role: hostname
     - role: resolv_conf
       vars:
         nameservers: [127.0.0.1] # add a nameserver entry poining to localhost for dnsmasq.

@@ -50,6 +50,22 @@
   notify: "restart pgbouncer"
   tags: pgbouncer_service, pgbouncer
 
+- name: Create a directory /run/pgbouncer
+  ansible.builtin.file:
+    path: /run/pgbouncer
+    state: directory
+    mode: '0755'
+    owner: postgres
+    group: postgres
+    
+- name: Create a directory /var/log/pgbouncer
+  ansible.builtin.file:
+    path: /var/log/pgbouncer
+    state: directory
+    mode: '0755'
+    owner: postgres
+    group: postgres
+
 - block:  # workaround for pgbouncer from postgrespro repo
     - name: Check that /usr/bin/pgbouncer is exists
       ansible.builtin.stat:
@@ -106,6 +122,7 @@
     - (existing_pgcluster is not defined or not existing_pgcluster|bool)
     - not pgbouncer_auth_user|bool
   tags: pgbouncer
+
 
 - block:  # for add_pgnode.yml
     - name: Fetch pgbouncer.ini file from master
